@@ -6,7 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+</style>
 <body>
-    hi
+    <canvas id="canvas" width="2000" height="2000" style="width:100%;height:100vh;"></canvas>
 </body>
+
+
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+            "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+        }
+    }
+</script>
+<script type="module">
+    import { OrbitControls } from 'https://unpkg.com/three@0.141.0/examples/jsm/controls/OrbitControls.js';
+    import {GLTFLoader} from 'GLTFLoader';
+    import * as THREE from 'three';
+    
+    let scene = new THREE.Scene();
+    let renderer = new THREE.WebGLRenderer({
+        canvas : document.querySelector("#canvas"),
+        antialias : true
+    });
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    let camera = new THREE.PerspectiveCamera(140, window.innerWidth / window.innerHeight, 10, 6000);
+    camera.position.set(100,230,1000);
+    camera.aspect = canvas.clientWidth / canvas.clientHeight;
+    camera.updateProjectionMatrix();
+
+    let hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 3); scene.add(hemiLight);
+  
+  let light = new THREE.SpotLight(0xffa95c,5); light.position.set(1,1,1); 
+  light.castShadow = true; 
+  scene.add( light );
+
+  const controls = new OrbitControls( camera, renderer.domElement );
+    controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+    controls.dampingFactor = 0.05;
+
+    controls.screenSpacePanning = true;
+
+    // controls.minDistance = 100;
+    // controls.maxDistance = 500;
+
+    // controls.maxPolarAngle = Math.PI / 2;
+    controls.update();
+    
+    
+    const pointLight = new THREE.PointLight( 0xff0000, 1, 100 );
+    pointLight.position.set( 10, 10, 10 );
+    scene.add( pointLight );
+    
+    let loader = new GLTFLoader();
+    loader.load('rendering6/scene.gltf', function(gltf){
+        scene.add(gltf.scene);
+        // gltf.scene.rotation.z += 0.7
+        // gltf.scene.rotation.x += 0.2
+        // controls.update();
+        renderer.render(scene, camera);
+        // function animate(){
+        //     requestAnimationFrame(animate)
+        //     gltf.scene.rotation.y -= 0.001
+        //     renderer.render(scene, camera);
+        // }
+        // animate()
+        function animate(){
+            requestAnimationFrame(animate)
+            // gltf.scene.rotation.y -= 0.001
+                gltf.scene.rotation.z -= 0.001
+            controls.update();
+
+            renderer.render(scene, camera);
+        }
+        animate()
+
+    });
+</script>
 </html>
+
+
