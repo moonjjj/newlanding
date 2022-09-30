@@ -1,0 +1,137 @@
+/* reset */
+html,body {
+    width:100%;height:100%;margin:0px;padding:0px;
+    overflow:hidden;
+    display: flex;
+    font-family: 'Nanum Gothic', sans-serif;
+    /* background-color: #000; */
+}
+ul, li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+a{text-decoration: none;}
+
+
+/* header start */
+#header{position: fixed; top:0; left: 0; width: 100%; height: 70px; z-index: 100;
+    /* background-color: rgba(0,40,99,0.8); */
+    background-color: rgba(0,0,0,0.8);
+    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
+    
+}
+#header .header_inner{position: relative; display: flex;}
+#header .header_inner h1{position: relative; top: 14px; left: 60px; margin:0;}
+#header .gong_logo{width:130px;}
+#header .gnb>ul{display: flex; position: absolute; width: 42%; height: 140px; top: 0; right: 80px;}
+#header .gnb>ul>li{width: 16.66%; min-width: 80px;}
+#header .gnb>ul>li>a{display: flex; color: #fff; line-height: 20px; align-items: center; justify-content: center; height: 51%;}
+/* #header .gnb>ul>.home_select>a::after{content: ""; display: block; width: 60px; border-bottom: 2px solid #fff; top: -50px; position: relative; left: 50%; transform: translateX(-50%);} */
+#header .gnb .sub_menu{position: relative; text-align: center; display: block;}
+#header .gnb .sub_menu a{display: block; color: #fff;}
+#header .gnb .sub_menu a:hover{color: #ff6701;}
+
+/* header active */
+.header_active{height: 70px; background-color: #002863; transition-duration: 0.7s;}
+#header .header_active h1{position: relative; top: 14px; left: 60px; width: 20%;}
+#header .header_active .gnb>ul{height: 70px;}
+#header .header_active .gnb>ul>li{position: relative;}
+#header .header_active .gnb>ul>li>a{display: flex; color: #fff; line-height: 20px; align-items: center; justify-content: center; height: 100%;}
+#header .header_active .gnb>ul>li>a::after{content: '';width: 0%;height: 3px;position: absolute;background: #fff;bottom: 0;left: 50%;transform: translateX(-50%);transition: all 0.5s;}
+#header .header_active .gnb>ul>li>a:hover::after,#header .header_active .gnb>ul>li>a:focus::after{width: 80%;}
+#header .gnb .sub_menu{position: relative; text-align: center; display: none; border:1px solid #d2d2d2;border-top:none; padding: 20px; width: 120%; left: 50%; transform: translateX(-50%);
+    /* background-color: rgba(0,40,99,0.8); */
+    background-color: rgba(0,0,0,0.8);
+    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
+}
+#header .gnb .sub_menu>li>a{color: #fff; font-weight:700;line-height: 1rem;margin: 20px 0;}
+
+
+#canvas{
+    /* z-index: 112; */
+    position: absolute;
+    left:50.5%;
+    top: -10%;
+}
+#main_visual{
+    height: 600px;
+    width: 100%;
+    /* background-color: #020202; */
+    position: relative;
+    background: url('/img/space_bg.blur.png') no-repeat;
+    /* filter:blur(5px); */
+    background-size: cover;
+    border-radius: 0 0 100px 100px;
+    box-shadow: 0 0 15px #002863;
+}
+.title_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main_title{
+    /* color: #fff; */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    z-index: 111;
+    letter-spacing: -10px;
+    font-size: 150px;
+    margin:100px 0px 0 50px;
+    color:#c4d0e5 !important;
+    background: linear-gradient(to right, #d2d2d2, #002863);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-align: center; */
+}
+.title_section .sub_title{
+    color:#cfd8e7 !important;
+    background: linear-gradient(to right, #d2d2d2, #002863);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-left:60px;
+    font-size:30px;
+}
+.btn_section{
+    display: flex;
+    gap: 30px;
+    margin-top:50px;
+    margin-left:60px;
+}
+.btn_section .customer_btn,
+.btn_section .company_btn{
+    color:#cfd8e7 !important;
+    border:1px solid #cfd8e7;
+    padding: 10px 30px;
+    font-size:20px;
+    cursor: pointer;
+    background-color: #00286380;
+    display: flex;
+    align-items: center;
+}
+.btn_section .customer_btn .sub_desc,
+.btn_section .company_btn .sub_desc{
+    font-size:11px;
+    margin-right: 3px;
+}
+
+.btn_section .customer_btn img,
+.btn_section .company_btn img{
+    margin-left:10px;
+    width: 15px;
+}
+
+.canvas_section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
