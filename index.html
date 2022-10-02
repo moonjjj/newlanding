@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/slick.css"> -->
     <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="/js/jquery.1.12.4.js"></script>
     <title>Document</title>
+    <script>
+        // !function(e,n,t){function r(e,n){return typeof e===n}function s(){var e,n,t,s,o,i,a;for(var l in w)if(w.hasOwnProperty(l)){if(e=[],n=w[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=r(n.fn,"function")?n.fn():n.fn,o=0;o<e.length;o++)i=e[o],a=i.split("."),1===a.length?Modernizr[a[0]]=s:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=s),C.push((s?"":"no-")+a.join("-"))}}function o(e){var n=_.className,t=Modernizr._config.classPrefix||"";if(x&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),x?_.className.baseVal=n:_.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):x?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function a(e,n){return function(){return e.apply(n,arguments)}}function l(e,n,t){var s;for(var o in e)if(e[o]in n)return t===!1?e[o]:(s=n[e[o]],r(s,"function")?a(s,t||n):s);return!1}function f(e,n){return!!~(""+e).indexOf(n)}function u(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function c(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function d(n,t,r){var s;if("getComputedStyle"in e){s=getComputedStyle.call(e,n,t);var o=e.console;if(null!==s)r&&(s=s.getPropertyValue(r));else if(o){var i=o.error?"error":"log";o[i].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else s=!t&&n.currentStyle&&n.currentStyle[r];return s}function p(){var e=n.body;return e||(e=i(x?"svg":"body"),e.fake=!0),e}function m(e,t,r,s){var o,a,l,f,u="modernizr",c=i("div"),d=p();if(parseInt(r,10))for(;r--;)l=i("div"),l.id=s?s[r]:u+(r+1),c.appendChild(l);return o=i("style"),o.type="text/css",o.id="s"+u,(d.fake?d:c).appendChild(o),d.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(n.createTextNode(e)),c.id=u,d.fake&&(d.style.background="",d.style.overflow="hidden",f=_.style.overflow,_.style.overflow="hidden",_.appendChild(d)),a=t(c,e),d.fake?(d.parentNode.removeChild(d),_.style.overflow=f,_.offsetHeight):c.parentNode.removeChild(c),!!a}function y(n,r){var s=n.length;if("CSS"in e&&"supports"in e.CSS){for(;s--;)if(e.CSS.supports(c(n[s]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var o=[];s--;)o.push("("+c(n[s])+":"+r+")");return o=o.join(" or "),m("@supports ("+o+") { #modernizr { position: absolute; } }",function(e){return"absolute"==d(e,null,"position")})}return t}function g(e,n,s,o){function a(){c&&(delete N.style,delete N.modElem)}if(o=r(o,"undefined")?!1:o,!r(s,"undefined")){var l=y(e,s);if(!r(l,"undefined"))return l}for(var c,d,p,m,g,v=["modernizr","tspan","samp"];!N.style&&v.length;)c=!0,N.modElem=i(v.shift()),N.style=N.modElem.style;for(p=e.length,d=0;p>d;d++)if(m=e[d],g=N.style[m],f(m,"-")&&(m=u(m)),N.style[m]!==t){if(o||r(s,"undefined"))return a(),"pfx"==n?m:!0;try{N.style[m]=s}catch(h){}if(N.style[m]!=g)return a(),"pfx"==n?m:!0}return a(),!1}function v(e,n,t,s,o){var i=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+T.join(i+" ")+i).split(" ");return r(n,"string")||r(n,"undefined")?g(a,n,s,o):(a=(e+" "+z.join(i+" ")+i).split(" "),l(a,n,t))}function h(e,n,r){return v(e,t,t,n,r)}var C=[],w=[],S={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){w.push({name:e,fn:n,options:t})},addAsyncTest:function(e){w.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=S,Modernizr=new Modernizr;var _=n.documentElement,x="svg"===_.nodeName.toLowerCase(),b=S._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];S._prefixes=b,Modernizr.addTest("csspositionsticky",function(){var e="position:",n="sticky",t=i("a"),r=t.style;return r.cssText=e+b.join(n+";"+e).slice(0,-e.length),-1!==r.position.indexOf(n)});var P="Moz O ms Webkit",T=S._config.usePrefixes?P.split(" "):[];S._cssomPrefixes=T;var z=S._config.usePrefixes?P.toLowerCase().split(" "):[];S._domPrefixes=z;var E={elem:i("modernizr")};Modernizr._q.push(function(){delete E.elem});var N={style:E.elem.style};Modernizr._q.unshift(function(){delete N.style}),S.testAllProps=v,S.testAllProps=h,Modernizr.addTest("cssanimations",h("animationName","a",!0)),Modernizr.addTest("csstransforms",function(){return-1===navigator.userAgent.indexOf("Android 2.")&&h("transform","scale(1)",!0)}),Modernizr.addTest("csstransitions",h("transition","all",!0)),s(),o(C),delete S.addTest,delete S.addAsyncTest;for(var k=0;k<Modernizr._q.length;k++)Modernizr._q[k]();e.Modernizr=Modernizr}(window,document);
+    </script>
 </head>
 <body>
     <header id="header">
@@ -54,41 +59,218 @@
 
     <!-- 1 section -->
     <section id="main_visual">
-        <div class="title_section">
-            <h3 class="main_title">GONGSAERO</h3>
-            <span class="sub_title">공사의 새로운 로드맵을 만들어 나가겠습니다.</span>
-        </div>
-        <div class="btn_section">
-            <div class="customer_btn">
-                <span class="sub_desc">건설자재 <strong>주문</strong>을 위한</span>
-                고객사
-                <img src="/img/arrow_right.png" alt="">
+        <div class="inner">
+            <div class="title_section">
+                <h3 class="main_title">GONGSAERO</h3>
+                <span class="sub_title">공사의 새로운 로드맵을 만드는</span>
             </div>
-            <div class="company_btn">
-                <span class="sub_desc">건설자재 <strong>공급</strong>을 위한</span>
-                제휴사
-                <img src="/img/arrow_right.png" alt="">
+            <div class="btn_section">
+                <div class="customer_btn">
+                    <span class="sub_desc">건설자재 <strong>주문</strong>을 위한</span>
+                    고객사
+                    <img src="/img/arrow_right.png" alt="">
+                </div>
+                <div class="company_btn">
+                    <span class="sub_desc">건설자재 <strong>공급</strong>을 위한</span>
+                    제휴사
+                    <img src="/img/arrow_right.png" alt="">
+                </div>
             </div>
-        </div>
-        <div class="canvas_section">
-            <canvas id="canvas" width="900" height="900"></canvas>
+            <div class="canvas_section">
+                <canvas id="canvas" width="900" height="900"></canvas>
+            </div>
         </div>
     </section>
+    <!-- 2 section -->
     <section id="main_card">
         <div class="container">
             <div class="main_desc">
                 <span>공새로 회원가입</span>
-                <p class="sub">건설자재 공급의 새로운 패러다임</p>
+                <p class="sub">건설자재 공급의 디지털 전환</p>
                 <p class="bold">공새로를 지금 바로 시작해 보세요</p>
+                <a href="">시작하기</a>
             </div>
             <div class="card_img">
-                <img src="" alt="">
+                <img src="/img/card_bg_building.png" alt="" class="bg_building">
             </div>
         </div>
     </section>
+    <!-- 3 section -->
+	<div class="wrap">
+        <section class="fix_motion">
+            <article class="fix_wrap inner">
+                <h2 class="tit">
+                    <span>
+                        Our Service
+                        <!-- <img src="/img/gong_only_logo.png" alt=""> -->
+                    </span>
+                </h2>
+                <!-- <h3>공새로</h3> -->
+                <div class="main_wrap">
+                <div class="text_box">
+                    <div class="line"></div>
+                    <p class="txt01">
+                        <span class="main_desc">
+                            계약부터 배송까지 간편하게,<br>
+                        </span>
+                        <span class="sub_desc">
+                            디지털 기반 프로세스와 자동생성 되는 문서를 통해<br>
+                            주문서 발행 및 적시 조달이 가능하며, <br>
+                            이 모든 과정은 플랫폼을 통해 모니터링할 수 있습니다. <br>
+                        </span>
+                        <!-- <img src="/img/bigdata_img.png" alt="" class="bg_img"> -->
+                    </p>
+                    <p class="txt02">
+                        <span class="main_desc">
+                            알고리즘을 통한 거래 데이터 기반 정보 제공,<br>
+                        </span>
+                        <span class="sub_desc">
+                            건설사에게는 최적 공급업체를 연결해주고,<br/>
+                            공급사에게는 추가매출기회 및 정산관리에 도움을 줍니다.<br/>
+                        </span>
+                    </p>
+                    <p class="txt03">
+                        <span class="main_desc">
+                            빅데이터를 통한 비즈니스 문제 해결,<br>
+                        </span>
+                        <span class="sub_desc">
+                            공정단계별 건자재 패키지 추천<br>
+                            시세 모니터링 서비스를 제공하여 원가 관리에 도움을 줍니다.<br>
+                        </span>
+                    </p>
+                    <p class="txt04">
+                        <span class="main_desc">
+                            We build new construction way!<br>
+                        </span>
+                        <!-- <span class="sub_desc">
+                            디지털 전환 및 생산성 향상
+                        </span> -->
+                    </p>
+                </div>
+                <div class="fix_img_wrap">
+                        <div class="img_box">
+                            <div class="img_inner">
+                                <img src="img/1.PNG" class="change_img1 imgs" alt="">
+                                <img src="img/2.PNG" class="change_img2 imgs" alt="">
+                                <img src="img/3.PNG" class="change_img3 imgs" alt="">
+                                <img src="img/4.PNG" class="change_img4 imgs" alt="">
+                            </div>
+                        </div>
+                </div>
+                <!-- <div class="device_fix">
+                    <div class="watch_img">
+                        <figure class="img_device">
+                            <img src="/img/bg_device.png" alt="">
+                        </figure>
+                        <div class="slide_wrap">
+                            <div class="slide">
+                                <figure>
+                                    <img src="/img/1.PNG" style="width:100%;">
+                                </figure>
+                                <figure>
+                                    <img src="/img/2.PNG" style="width:100%;">
+                                </figure>
+                                <figure>
+                                    <img src="/img/3.PNG" style="width:100%;">
+                                </figure>
+                                <figure>
+                                    <img src="/img/4.PNG" style="width:100%;">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                </div>
+            </article>
+        </section>
+	</div>
+    <!-- 4section -->
+    <section id="main_vision">
+        <div class="inner">
+            <div class="service_container">
+                <img src="/img/thumbs_up.png" alt="" class="thumbs_bg">
+                <img src="/img/gong_only_logo.png" alt="" class="logo_bg">
+                <img src="img/service_web.png" class="service_img" alt="">
+                <div class="service_right">
+                    <div class="service_desc">
+                        <span class="gong">공새로</span>는 <br>
+                        스마트건설 데이터 플랫폼으로<br>
+                        건자재조달 생태계를 제공하고 지속상승 로드맵을 만듭니다.<br>
+                    </div>
+                    <div class="service_btn">
+                        <a>
+                            제휴신청
+                            <img src="/img/arrow_right.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 5section -->
+    <section id="main_contact">
+        <div class="inner_container">
+            <div class="contact_inner">
+                <div class="left_area">
+                    <h2 class="inner_tit scrollreveal animated">Contact us<span><img src="https://websrepublic.co.kr/theme/websrepublic-white/img/foot_wave_img.png"></span></h2>
+                    <div class="left_inner_con scrollreveal animated">궁금하신 사항을 남겨주세요!<br>확인 후 빠른 답변 드리겠습니다.</div>
+                    <ul class="info_list">
+                        <li class="icon1 scrollreveal animated" >A. 인천광역시 송도동 컨벤시아대로 204 인스타1 522호</li>
+                        <li class="icon2 scrollreveal animated">E. gongsaero@contact.com</li>
+                        <li class="icon3 scrollreveal animated">M. 070-8098-8224</li>
+                    </ul>
+                </div>
+                <div class="right_area">
+                    <div id="formmail" class="new_win mbskin">
+                        <form action="/contact" method="post" onsubmit="submitFunction();">
+                            <ul class="field_list">
+                                <li class="scrollreveal animated" style="">
+                                    <input type="text" name="name" placeholder="이름(name)" id="test">
+                                </li>
+                                <li class="scrollreveal animated" style="">
+                                    <input type="text" name="company" placeholder="소속 회사 (company name)">
+                                </li>
+                                <li class="scrollreveal animated" style="">
+                                    <input type="text" name="phone" placeholder="연락처 (phone number)">
+                                </li>
+                                <li class="scrollreveal animated" style="">
+                                    <input type="email" name="e-mail" placeholder="연락 받으실 이메일 (email)">
+                                </li>
+                                <li class="scrollreveal animated" style="">
+                                    <textarea rows="8" name="content" value="문의 내용" placeholder="문의 내용 (contact detail)"></textarea>
+                                </li>
+                            </ul>
+
+                            <div class="btn_area scrollreveal animated" style="">
+                                <input type="submit" value="Send Mail" onclick="submitCheck();">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <p><span>고객센터</span>070-8098-8224</p>
+                <div class="top_link">
+                    <a href="/terms">이용약관</a>
+                    <a href="/privacy">개인정보처리방침</a>
+                </div>
+            </div>
+            <div class="footer_mid">
+                <p id="txt244">상호명 : 주식회사 공새로 | 사업자등록번호 : 670-87-02114 | 통신판매신고 : 제2021-인천연수구-2330호 | 전화번호 : 070-8098-8224 </p>
+                <p id="txt245">주소 : 인천광역시 연수구 컨벤시아대로 204 인천스타트업파크 인스타I (송도동) | 문의메일 : contact@gongsaero.com | 대표자 : 남가람 </p>
+            </div>
+        </div>
+    </footer>
 </body>
 
-
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
+<!-- <script type="text/javascript" src="js/slick.min.js"></script> -->
 <script type="importmap">
     {
         "imports": {
@@ -124,6 +306,8 @@
     scene.add( light );
 
     const controls = new OrbitControls( camera, renderer.domElement );
+    // to disable zoom
+controls.enableZoom = false;
     controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
     // controls.dampingFactor = 0.05;
     // scene.background = new THREE.Color( 0xff0000 );
@@ -163,49 +347,198 @@
         animate()
 
     });
-
-    // import {GLTFLoader} from 'GLTFLoader';
-    //     import * as THREE from 'three';
-        
-    //     let scene = new THREE.Scene();
-    //     let renderer = new THREE.WebGLRenderer({
-    //         canvas : document.querySelector("#canvas"),
-    //         antialias : true
-    //     });
-    //     renderer.outputEncoding = THREE.sRGBEncoding;
-    //     let camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1000, 10000);
-    //     camera.position.set(100,250,10000);
-    //     camera.aspect = canvas.clientWidth / canvas.clientHeight;
-    //     camera.updateProjectionMatrix();
-
-    //     let hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 3); scene.add(hemiLight);
-      
-    //   let light = new THREE.SpotLight(0xffa95c,5); light.position.set(-0,50,50); 
-    //   light.castShadow = true; 
-    //   scene.add( light );
-    
-    
-    //   const pointLight = new THREE.PointLight( 0xff0000, 1, 100 );
-    //   pointLight.position.set( 10, 10, 10 );
-    //   scene.add( pointLight );
-    
-    //     let loader = new GLTFLoader();
-    //     loader.load('rendering/scene.gltf', function(gltf){
-    //         scene.add(gltf.scene);
-    //         // gltf.scene.rotation.z += 0.7
-    //         // gltf.scene.rotation.x += 0.2
-    //         renderer.render(scene, camera);
-    //         function animate(){
-    //             requestAnimationFrame(animate)
-    //             gltf.scene.rotation.y -= 0.0001
-    //             renderer.render(scene, camera);
-    //         }
-    //         animate()
-    
-    //     });
-
-
 </script>
+
+
+<script type="text/javascript">
+    $(function(){
+    
+        var scrollBody = $('.fix_motion');
+        var scrollHeight;
+        var sectionOffsetTop;
+        var sectionScrolTop;
+        var scrollRealHeight;
+        var winScrollTop;
+        var scrollPerecnt;
+        var percent;
+        var isMobile;
+    
+        function scrollFunc() {
+    
+            setProperty();
+    
+            if(isMobile) {
+                contentInMobile();
+            } else {
+                contentIn();
+            }
+        };
+    
+        function setProperty() {
+    
+            isMobile = $(window).width() <= 1024 ? true : false;
+            scrollHeight = scrollBody.height();
+            sectionOffsetTop = scrollBody.offset().top;
+            scrollRealHeight = (scrollHeight - $(window).height());
+            winScrollTop = $(window).scrollTop();
+            sectionScrolTop = winScrollTop - sectionOffsetTop;
+    
+            scrollPerecnt =  sectionScrolTop / scrollRealHeight;
+            percent = scrollPerecnt * 100;
+    
+        };
+    
+        function contentIn() {
+    
+            var deviceImg = $('.device_fix .slide_wrap figure');
+            // var imgWidth = deviceImg.width();
+            // if change?
+            var imgWidth = 1000;
+            console.log(percent);
+            if(percent < 12){
+                // 1
+                imageChange(imgWidth * 0);
+                $('.fix_motion .text_box .txt01').addClass('active');
+                $('.change_img1').css('opacity','1');
+            }
+            if(percent >= 20 && percent < 55) {
+                // 2
+                imageChange(imgWidth * 1);
+                // $('.fix_img_wrap .change_img').attr('src','img/2.PNG');
+                $('.fix_motion .text_box .txt02').addClass('active');
+                $('.change_img1').css('opacity','0');
+                $('.change_img2').css('opacity','1');
+            }
+            
+            if(percent >= 55 && percent < 90) {
+                // 3
+                imageChange(imgWidth * 2);
+                $('.fix_motion .text_box .txt03').addClass('active');
+                $('.change_img3').css('opacity','1');
+                $('.change_img2').css('opacity','0');
+            }
+            
+            if(percent >= 90) {
+                // 4
+                imageChange(imgWidth * 3);
+                $('.fix_motion .text_box .txt04').addClass('active');
+                $('.change_img4').css('opacity','1');
+                $('.change_img3').css('opacity','0');
+            }
+    
+            // 초기화
+            // if(percent < 12 ) {
+            //     $('.fix_motion .text_box .txt01').removeClass('active');
+            //     $('.fix_motion .text_box .txt02').removeClass('active');
+            //     $('.fix_motion .text_box .txt03').removeClass('active');
+            //     $('.fix_motion .text_box .txt04').removeClass('active');
+            //     $('.change_img1').css('opacity','0');
+            // }
+        };
+    
+        function contentInMobile() {
+    
+            var deviceImg = $('.device_fix .slide_wrap figure');
+            var imgWidth = 375;
+            // var imgWidth = deviceImg.width();
+            console.log(percent);
+    
+            if(percent >= 5 && percent < 25){
+    
+                imageChange(imgWidth * 0);
+                $('.fix_motion .text_box p').removeClass('active');
+                $('.fix_motion .text_box .txt01').addClass('active');
+            }
+    
+            if(percent >= 25 && percent < 60) {
+    
+                imageChange(imgWidth * 1);
+                $('.fix_motion .text_box p').removeClass('active');
+                $('.fix_motion .text_box .txt02').addClass('active');
+            }
+    
+            if(percent >= 60 && percent < 100) {
+    
+                imageChange(imgWidth * 2);
+                $('.fix_motion .text_box p').removeClass('active');
+                $('.fix_motion .text_box .txt03').addClass('active');
+            }
+    
+            if(percent >= 100 && percent <= 120) {
+    
+                imageChange(imgWidth * 3);
+                $('.fix_motion .text_box p').removeClass('active');
+                $('.fix_motion .text_box .txt04').addClass('active');
+    
+            }
+    
+            // if(percent > 93) {
+    
+            //     imageChange(imgWidth * 3);
+            //     $('.fix_motion .text_box p').removeClass('active');
+            // }
+    
+            // if(percent < 0) {
+    
+            //     imageChange(imgWidth * 0);
+            //     $('.fix_motion .text_box p').removeClass('active');
+            // }
+    
+        };
+    
+        function imageChange(moveX) {
+    
+            // if(Modernizr.csspositionsticky) {
+                var img = $('.fix_img_wrap .img_inner');
+                img.css({
+                    'transform':'translateX('+ -moveX +'px)'
+                });
+            // }
+        };
+    
+        function init() {
+            scrollFunc();
+        };
+    
+        $(window).scroll(function() {
+            scrollFunc();
+        });
+    
+        $(window).resize(function() {
+            scrollFunc();
+        });
+    
+        init();
+    });
+    </script>
+<!-- <script>
+
+$('.center').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+</script> -->
 </html>
 
 
